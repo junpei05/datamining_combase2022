@@ -1,0 +1,20 @@
+{
+  "name": "combase-xgb2022",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  ],
+  // "remoteUser": "vscode",
+  "postCreateCommand": "pip install --no-cache-dir -r /workspace/requirements.txt && python -m ipykernel install --user --name combase_2022 --display-name 'Python (ComBase_2022)'"
+}
